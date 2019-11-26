@@ -1,0 +1,42 @@
+<% include navbar.ejs %> <%- messages('messageTemplate', locals) %>
+<div class="container">
+  <div class="row">
+    <% mobileApps.forEach(function(mobileApp){ %>
+
+    <div class="col-md-4">
+      <div class="card mb-4 shadow-sm">
+        <img src=<%= mobileApp.appIcon %> class="card-img-top" alt="..."
+        style="width: 5rem;" />
+        <div class="card-body">
+          <p class="card-text">
+            <%= mobileApp.name %>
+          </p>
+          <p class="card-text">
+            <%= mobileApp.releaseDate %>
+          </p>
+          <p class="card-text">
+            <%= mobileApp.countryCode %>
+          </p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <a
+                href="/clientSide/editMobileApp/<%= mobileApp._id %>"
+                class="btn btn-sm btn-outline-secondary"
+                >Edit</a
+              >
+              <a
+                href="/clientSide/delete/<%= mobileApp._id %>"
+                class="btn btn-sm btn-outline-secondary"
+                >Delete</a
+              >
+            </div>
+            <small class="text-muted">9 mins</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br />
+    <% }) %>
+  </div>
+</div>

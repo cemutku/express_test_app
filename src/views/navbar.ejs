@@ -1,0 +1,31 @@
+<nav
+  class="navbar navbar-expand-md navbar-dark bg-dark fixed-top-mb-10"
+  style="margin-bottom: 2rem;"
+>
+  <% if (user) { %>
+  <a class="navbar-brand" href="/clientSide/home">Home</a>
+  <% } else { %>
+  <a class="navbar-brand" href="/clientSide/login">Home</a>
+  <% } %>
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <% if (user) { %>
+        <a class="nav-link" href="/clientSide/addMobileApp"
+          >Add Mobile App <span class="sr-only">(current)</span></a
+        >
+        <% } %>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <% if (user) { %>
+      <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">
+        Welcome <%= user.email %>
+      </a>
+      <a class="navbar-brand" href="/clientSide/logout">Logout</a>
+      <% } else { %>
+      <a class="navbar-brand" href="/clientSide/login">Login</a>
+      <% } %>
+    </form>
+  </div>
+</nav>

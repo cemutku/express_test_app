@@ -1,0 +1,68 @@
+<% include navbar.ejs %> <%- messages('messageTemplate', locals) %>
+<div class="container">
+  <form method="POST" action="/clientSide/addMobileApp">
+    <div class="form-group row">
+      <label for="inputAppName" class="col-sm-2 col-form-label">Name</label>
+      <div class="col-sm-10">
+        <input
+          type="text"
+          class="form-control"
+          id="inputAppName"
+          placeholder="Name"
+          name="name"
+          value="<%= typeof name != 'undefined' ? name : '' %>"
+        />
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputAppReleaseDate" class="col-sm-2 col-form-label"
+        >Release Date</label
+      >
+      <div class="col-sm-10">
+        <input
+          type="text"
+          class="form-control"
+          id="inputAppReleaseDate"
+          placeholder="ReleaseDate"
+          name="releaseDate"
+          value="<%= typeof releaseDate != 'undefined' ? releaseDate : '' %>"
+        />
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputAppCountryCode" class="col-sm-2 col-form-label"
+        >Country Code</label
+      >
+      <div class="col-sm-10">
+        <input
+          type="text"
+          class="form-control"
+          id="inputAppCountryCode"
+          placeholder="Country Code"
+          name="countryCode"
+          value="<%= typeof countryCode != 'undefined' ? countryCode : '' %>"
+        />
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputAppIcon" class="col-sm-2 col-form-label"
+        >App Icon Url</label
+      >
+      <div class="col-sm-10">
+        <input
+          type="text"
+          class="form-control"
+          id="inputAppIcon"
+          placeholder="App Icon"
+          name="appIcon"
+          value="<%= typeof appIcon != 'undefined' ? appIcon : '' %>"
+        />
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-sm-10">
+        <button type="submit" class="btn btn-secondary">Save</button>
+      </div>
+    </div>
+  </form>
+</div>
